@@ -150,8 +150,8 @@ const LoginForm = () => {
                   variant='contained'
                   sx={{
                     mt: 3,
-                   
-                    
+                    bgcolor: 'green',
+                    '&:hover': { bgcolor: 'darkgreen' }
                   }}
                   disabled={loading}
                 >
