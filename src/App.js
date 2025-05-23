@@ -4,16 +4,40 @@ import { Provider } from 'react-redux';
 import  {store, persistor } from './store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ToastContainer } from 'react-toastify';
-import { CssBaseline } from '@mui/material';
-
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#00C853', // Your green color
+    },
+    background: {
+      default: '#121212',
+      paper: '#1E1E1E',
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          fontWeight: 'bold',
+        },
+      },
+    },
+  },
+});
 function App() {
   return (
     <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
+      <ThemeProvider theme={theme}>
+
       <CssBaseline />
         <AppRoutes />
         <ToastContainer />
+        </ThemeProvider>
       </BrowserRouter>
       </PersistGate >
     </Provider>
