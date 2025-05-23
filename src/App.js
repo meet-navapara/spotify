@@ -9,7 +9,7 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#00C853', // Your green color
+      main: '#00C853', 
     },
     background: {
       default: '#121212',
@@ -33,7 +33,6 @@ function App() {
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
       <ThemeProvider theme={theme}>
-
       <CssBaseline />
         <AppRoutes />
         <ToastContainer />
