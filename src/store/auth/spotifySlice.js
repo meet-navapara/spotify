@@ -1,10 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-
+const CLIENT_ID="010798707d41476ca285990245d63ccb"
+const CLIENT_SECRET="26c6fbb034274097902abaae625fac21"
 
 const getAccessToken = async () => {
-  const credentials = btoa(`${process.env.CLIENT_ID}:${process.env.CLIENT_SECRET}`)
+  console.log("process.env.CLIENT_ID",process.env)
+  const credentials = btoa(`${CLIENT_ID}:${CLIENT_SECRET}`)
   const response = await axios.post(
     'https://accounts.spotify.com/api/token',
     'grant_type=client_credentials',
