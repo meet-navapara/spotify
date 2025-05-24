@@ -24,7 +24,6 @@ export const addTrack = createAsyncThunk(
   'playlist/addTrack',
   async trackData => {
     const response = await createTrack(trackData)
-    console.log('response :>> ', response)
     return response
   }
 )
@@ -57,7 +56,6 @@ const playlistSlice = createSlice({
         state.status = 'succeeded'
       })
       .addCase(addTrack.fulfilled, (state, action) => {
-        console.log('action.payload :>> ', action.payload)
         if (action.payload) {
           state.tracks.push(action.payload)
         }

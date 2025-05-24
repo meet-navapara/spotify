@@ -10,7 +10,7 @@ export const loginUser = createAsyncThunk(
     try {
       // Replace with actual API call
       const response = await axios.post(`${API_URL}/login`, { email, password })
-      localStorage.setItem("authToken",response.data.token)
+      localStorage.setItem("authToken", response.data.data.token)
       toast.success(response.data.message)
       return response.data
     } catch (err) {
