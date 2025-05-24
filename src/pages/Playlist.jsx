@@ -33,7 +33,7 @@ const Playlist = () => {
   const [newName, setNewName] = useState('')
 
   useEffect(() => {
-    dispatch(fetchPlaylist(user.data.email))
+    dispatch(fetchPlaylist())
   }, [])
 
   // --- Edit Logic ---
@@ -63,7 +63,7 @@ const Playlist = () => {
   }
 
   const confirmDelete = () => {
-    dispatch(removeTrack({ id: selectedTrack._id, addedBy: user.data.email }))
+    dispatch(removeTrack({ id: selectedTrack._id }))
     setDeleteOpen(false)
     setSelectedTrack(null)
   }

@@ -14,8 +14,8 @@ const initialState = {
 
 export const fetchPlaylist = createAsyncThunk(
   'playlist/fetchPlaylist',
-  async addedBy => {
-    const response = await fetchTracksByUser(addedBy)
+  async () => {
+    const response = await fetchTracksByUser()
     return response
   }
 )
@@ -32,7 +32,7 @@ export const addTrack = createAsyncThunk(
 export const removeTrack = createAsyncThunk(
   'playlist/removeTrack',
   async ({ id, addedBy }) => {
-    await deleteTrackByUser({ id, addedBy })
+    await deleteTrackByUser({ id })
     return id
   }
 )
