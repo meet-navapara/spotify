@@ -30,8 +30,8 @@ export const addTrack = createAsyncThunk(
 
 export const removeTrack = createAsyncThunk(
   'playlist/removeTrack',
-  async ({ id, addedBy }) => {
-    await deleteTrackByUser({ id })
+  async ( id ) => {
+    await deleteTrackByUser( id )
     return id
   }
 )

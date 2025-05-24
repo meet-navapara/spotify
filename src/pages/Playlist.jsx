@@ -63,7 +63,7 @@ const Playlist = () => {
   }
 
   const confirmDelete = () => {
-    dispatch(removeTrack({ id: selectedTrack._id }))
+    dispatch(removeTrack( selectedTrack._id ))
     setDeleteOpen(false)
     setSelectedTrack(null)
   }
